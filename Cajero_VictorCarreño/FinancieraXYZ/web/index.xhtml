@@ -1,0 +1,47 @@
+﻿<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:pt="http://xmlns.jcp.org/jsf/passthrough"
+
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+
+        <title>Atm JSF</title>
+        <link rel="stylesheet" type="text/css" href="css/estilos.css" media="screen" />
+        <!--        <link rel=StyleSheet href="css/estilos.css" type="text/css" media=screen />-->
+    </h:head>
+    <h:body>
+        <div id="container">
+            <header>
+                <div id="img">
+                    <img src="img/banco.jpg" width="150"> </img>
+                </div>
+                <div id="text">
+                    <h1><p align="center"> CAJERO AUTOMÁTICO BANCO DE LOJA </p></h1>
+                </div>  
+            </header>
+
+            <section class="contenedorLogin">
+                <h:form class="formulario">
+                    <!--                <h2>Bienvenido al cajero autómatico</h2>-->
+                    <p align="center">Rellene el siguiente formulario para ingresar al sistema</p>
+                    <p align="center"><h:inputText pt:placeholder="Nro. de cuenta" value="#{loguin.usuario}" /></p>
+                    <p align="center" ><h:inputSecret pt:placeholder="Contraseña" value="#{loguin.contrasena}" /></p>
+                    <h:messages infoStyle="color: blue;list-style:none;" errorStyle="color:red;list-style:none;"/>
+                    <section class="seccionBotones">
+                      <!--<h:commandButton value="Ingresar" action="#{loguin.loguin_x()}"  />-->  
+                        <h:commandButton styleClass="ButtonStyle" value="Ingresar" action="#{loguin.loguin_x()}">
+                            <f:param name="id" value="#{loguin.usuario}" />
+                        </h:commandButton>  
+                    </section>
+
+                </h:form>
+            </section>
+        </div>
+    </h:body>
+    <div id="footer">
+    </div>
+</html>
+
